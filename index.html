@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Diaria</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: #000;
+            text-align: center;
+        }
+        h1 {
+            padding: 30px 0;
+            color: #fff;
+        }
+        section {
+            background-color: #fff;
+            width: 300px;
+            height: 320px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        section h3 {
+            color: #000;
+            font-size: 1.6em;
+            padding: 10px 0;
+        }
+        section #txte {
+            padding: 10px 0;
+            font-size: 1em;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+        section button {
+            padding: 15px;
+            background-color: #000;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border: 1px solid black;
+            cursor: pointer;
+            color: #fff;
+        }
+        section h2 {
+            color: #000;
+            padding: 10px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculador de Díaria</h1>
+    </header>
+    <section>
+        <h3>Insira o Número de Entregas:</h3>
+        <input type="number" id="txte">
+        <h3>Valor a ser Recebido:</h3>
+        <h2 id="valor">R$ 0,00</h2>
+        <button onclick="verif()">Calcular</button>
+    </section>
+
+
+
+
+    <script>
+
+        function verif() {
+        caixa = document.querySelector('#txte');
+        const diariaFixa = 20;
+        entregasNu = Number(caixa.value);
+
+        diaria = (entregasNu * 2) +     diariaFixa;
+
+        resultado = document.querySelector('#valor');
+
+        if (entregasNu=="") {
+            alert('[ERRO] Verifique os Dados Abaixo e Tente Novamente.')
+        } else {
+            resultado.innerText = `R$ ${diaria},00`
+        }
+        }
+
+    </script>
+</body>
+</html>
